@@ -1,0 +1,153 @@
+.app {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+padding: 0 clamp(16px, 3vw, 40px);
+}
+
+.cabecera {
+padding: 28px 0 20px;
+border-bottom: 1px solid var(--linea);
+}
+
+.marca {
+font-family: var(--serif);
+font-weight: 400;
+font-size: clamp(2rem, 4vw, 2.75rem);
+letter-spacing: 0.01em;
+}
+
+.lema {
+color: var(--suave);
+font-family: var(--serif);
+font-style: italic;
+max-width: 60ch;
+}
+
+.espacio {
+flex: 1;
+display: grid;
+grid-template-columns: 260px minmax(0, 1fr) 300px;
+gap: clamp(16px, 2.5vw, 36px);
+padding: 28px 0;
+}
+
+.panel h2 {
+font-family: var(--serif);
+font-weight: 400;
+font-size: 1.15rem;
+color: var(--dorado);
+margin: 0 0 10px;
+}
+
+.panel h2:not(:first-child) { margin-top: 28px; }
+
+.lista {
+list-style: none;
+padding: 0;
+display: grid;
+gap: 0;
+}
+
+.lista li {
+display: grid;
+gap: 2px;
+padding: 10px 0;
+border-top: 1px solid var(--linea);
+font-size: 0.92rem;
+}
+
+.lista li span { color: var(--suave); }
+
+.etiqueta {
+font-size: 0.78rem;
+color: var(--suave);
+}
+
+.etiqueta.ok { color: var(--dorado); }
+
+.centro {
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 60vh;
+}
+
+.presencia {
+width: 132px;
+height: 132px;
+margin: 12px 0 24px;
+border-radius: 50%;
+border: 1px solid var(--dorado);
+background: radial-gradient(circle at 50% 40%, rgba(212, 165, 55, 0.35), rgba(212, 165, 55, 0.04) 70%);
+animation: respira 7s ease-in-out infinite;
+}
+
+@keyframes respira {
+0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 165, 55, 0); }
+50% { transform: scale(1.04); box-shadow: 0 0 40px 4px rgba(212, 165, 55, 0.18); }
+}
+
+.conversacion {
+flex: 1;
+width: min(100%, 640px);
+display: flex;
+flex-direction: column;
+gap: 12px;
+overflow-y: auto;
+padding-bottom: 16px;
+}
+
+.vacio { color: var(--suave); text-align: center; margin-top: 8px; }
+
+.msg { max-width: 85%; padding: 10px 14px; border-radius: 4px; }
+.msg.tu { align-self: flex-end; background: var(--blanco); color: var(--negro); }
+.msg.sistema { align-self: flex-start; border: 1px solid var(--linea); color: var(--suave); font-size: 0.9rem; }
+
+.entrada {
+width: min(100%, 640px);
+display: flex;
+gap: 8px;
+padding-top: 12px;
+border-top: 1px solid var(--linea);
+}
+
+.entrada input {
+flex: 1;
+min-width: 0;
+padding: 12px 14px;
+background: transparent;
+color: var(--blanco);
+border: 1px solid var(--linea);
+border-radius: 4px;
+font: inherit;
+}
+
+.entrada button {
+padding: 0 18px;
+background: var(--dorado);
+color: var(--negro);
+border: 0;
+border-radius: 4px;
+font: inherit;
+font-weight: 600;
+cursor: pointer;
+}
+
+.entrada .voz {
+background: transparent;
+color: var(--suave);
+border: 1px solid var(--linea);
+cursor: not-allowed;
+}
+
+:focus-visible { outline: 2px solid var(--dorado); outline-offset: 2px; }
+
+@media (max-width: 960px) {
+.espacio { grid-template-columns: 1fr; }
+.centro { order: -1; min-height: 50vh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.presencia { animation: none; }
+}

@@ -1,0 +1,21 @@
+:root {
+  --negro: #111111;
+  --blanco: #F3F1EC;
+  --dorado: #D4A537;
+  --linea: rgba(243, 241, 236, 0.14);
+  --suave: rgba(243, 241, 236, 0.68);
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+html, body, #root { min-height: 100%; }
+
+body {
+  background: var(--negro);
+  color: var(--blanco);
+  font-family: var(--sans);
+  line-height: 1.5;
+}

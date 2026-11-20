@@ -1,0 +1,1 @@
+Lunes, regisro de seguimieno inicial. 
